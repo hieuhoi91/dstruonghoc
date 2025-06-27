@@ -1,44 +1,74 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { Separator } from "@radix-ui/react-separator";
+import Link from "next/link";
 
+interface School {
+  logo: string;
+  name: string;
+  type: string;
+  majors: string[];
+  address: string;
+  describe: string;
+  slug: string;
+}
 
-
-
-
-function Badge({ children, color }: { children: React.ReactNode; color: string }) {
+function Badge({
+  children,
+  color,
+}: {
+  children: React.ReactNode;
+  color?: string;
+}) {
   return (
-    <span className={cn("px-3 py-2 rounded-lg text-xs font-semibold text-white", color)}>
+    <span
+      className={cn(
+        "px-3 py-1 rounded-full text-xs font-semibold",
+        color || "bg-gray-100 text-gray-700"
+      )}
+    >
       {children}
     </span>
   );
 }
 
-const SchoolCard = ({ school }: { school: any}) => {
+const SchoolCard = ({ school }: { school: School }) => {
   return (
-    <Card className="bg-white border-none text-black">
-      <CardHeader className="flex justify-center items-center gap-3 px-6 pt-2 pb-2">
-        <img
-          src={school.logo}
-          alt={school.name}
-          className="w-16 h-16 rounded-lg object-contain bg-gray-200 p-2"
-        />
-      </CardHeader>
-      <CardContent className="px-6 w-full">
-        <div className="font-semibold text-lg mb-1 text-center w-full">{school.name}</div>
-        <div className="text-center text-sm text-gray-400 w-full">
-          {school.acronym }
+    <Card className="bg-white border-none text-black gap-2 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-200 group overflow-hidden">
+      <div className="flex flex-col items-center p-6 pb-2">
+        <div className="w-24 h-24 rounded-xl bg-gray-100 flex items-center justify-center overflow-hidden border">
+          <img
+            src={school.logo}
+            alt={school.name}
+            className="w-20 h-20 object-contain rounded-xl"
+          />
         </div>
-      </CardContent>
-      <div className="px-4"><Separator className="bg-gray-200 h-px px-2" /></div>
-      <div className="flex flex-wrap gap-2 justify-center">
-        {school.majors && school.majors.map((major: string, idx: number) => (
-          <Badge key={idx} color="bg-gray-200 text-black">{major}</Badge>
-        ))}
+        <div className="font-bold text-xl text-center line-clamp-2 my-2">
+          {school.name}
+        </div>
+        <div className="flex flex-wrap gap-2 justify-center">
+          {school.type && (
+            <Badge color="bg-green-100 text-green-700 border border-green-200">
+              {school.type}
+            </Badge>
+          )}
+          {school.address && (
+            <Badge color="bg-green-100 text-green-700 border border-green-200">
+              {school.address}
+            </Badge>
+          )}
+        </div>
       </div>
-      
+      <CardContent className="px-6 mb-4">
+        <p className="text-sm text-gray-500 line-clamp-3">{school.describe}</p>
+      </CardContent>
+      <CardFooter className="px-6">
+        <Button className="w-full cursor-pointer">
+          <Link href={`/dstruong/${school.slug}`}>Xem thêm</Link>
+        </Button>
+      </CardFooter>
     </Card>
   );
-}
+};
 
 export default SchoolCard;

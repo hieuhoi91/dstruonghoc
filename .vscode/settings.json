@@ -1,15 +1,17 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "biomejs.biome",
-
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "editor.codeActionsOnSave": {
     "quickfix.biome": "explicit",
     "source.organizeImports": "explicit"
   },
-
-  "cSpell.words": ["commitlint"]
+  "cSpell.words": [
+    "commitlint"
+  ],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
