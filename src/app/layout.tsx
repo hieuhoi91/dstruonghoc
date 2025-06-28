@@ -9,6 +9,7 @@ import Header from "@/layout/Header";
 import { OpenGraph } from "@/lib/og";
 import Script from "next/script";
 import "./globals.css";
+import GTMPageView from "./gtm-events";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -51,6 +52,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+        <GTMPageView />
         <ThemeProvider>
           <Header />
           <main className="mb-16">{children}</main>
