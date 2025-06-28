@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme";
 import { Analytics } from "@vercel/analytics/react";
 
+import Footer from "@/layout/Footer";
+import Header from "@/layout/Header";
 import { OpenGraph } from "@/lib/og";
 import "./globals.css";
 
@@ -29,9 +31,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider>
-          <main>
-            {children}
-          </main>
+          <Header />
+          <main className="mb-16">{children}</main>
+          <Footer />
           <Analytics />
         </ThemeProvider>
       </body>

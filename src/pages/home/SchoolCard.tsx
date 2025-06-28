@@ -33,6 +33,7 @@ function Badge({
 }
 
 const SchoolCard = ({ school }: { school: School }) => {
+  if (!school) return null;
   return (
     <Card className="bg-white border-none text-black gap-2 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-200 group overflow-hidden">
       <div className="flex flex-col items-center p-6 pb-2">
@@ -63,9 +64,12 @@ const SchoolCard = ({ school }: { school: School }) => {
         <p className="text-sm text-gray-500 line-clamp-3">{school.describe}</p>
       </CardContent>
       <CardFooter className="px-6">
-        <Button className="w-full cursor-pointer">
-          <Link href={`/dstruong/${school.slug}`}>Xem thêm</Link>
-        </Button>
+        <Link
+          className="w-full cursor-pointer"
+          href={`/dstruong/${school.slug}`}
+        >
+          <Button className="w-full cursor-pointer">Xem thêm</Button>
+        </Link>
       </CardFooter>
     </Card>
   );

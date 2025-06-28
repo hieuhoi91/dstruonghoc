@@ -1,0 +1,232 @@
+[
+  {
+    "id": "loai-truong",
+    "name": "Loại Trường",
+    "list": [
+      {
+        "id": "cong-lap",
+        "name": "Công lập"
+      },
+      {
+        "id": "tu-thuoc",
+        "name": "Tư thục"
+      }
+    ]
+  },
+  {
+    "id": "chuyen-nganh",
+    "name": "Chuyên Ngành",
+    "list": [
+      {
+        "id": "cong-nghe-thong-tin",
+        "name": "Công nghệ thông tin",
+        "positions": [
+          "Phát triển phần mềm",
+          "An toàn thông tin",
+          "Trí tuệ nhân tạo",
+          "Khoa học dữ liệu",
+          "Mạng máy tính",
+          "Kỹ thuật phần mềm",
+          "Hệ thống thông tin",
+          "IoT & Nhúng"
+        ]
+      },
+      {
+        "id": "kinh-te",
+        "name": "Kinh tế",
+        "positions": [
+          "Tài chính - Ngân hàng",
+          "Kế toán",
+          "Quản trị kinh doanh",
+          "Marketing",
+          "Kinh tế quốc tế",
+          "Thương mại điện tử",
+          "Logistics",
+          "Kinh tế đầu tư"
+        ]
+      },
+      {
+        "id": "ky-thuat",
+        "name": "Kỹ thuật",
+        "positions": [
+          "Kỹ thuật điện",
+          "Cơ khí",
+          "Xây dựng",
+          "Tự động hóa",
+          "Điện tử viễn thông",
+          "Kỹ thuật ô tô",
+          "Công nghệ vật liệu",
+          "Robot & Mechatronics"
+        ]
+      },
+      {
+        "id": "y-duoc",
+        "name": "Y dược",
+        "positions": [
+          "Bác sĩ đa khoa",
+          "Dược học",
+          "Điều dưỡng",
+          "Y tế công cộng",
+          "Răng hàm mặt",
+          "Y học cổ truyền",
+          "Kỹ thuật xét nghiệm",
+          "Dinh dưỡng"
+        ]
+      },
+      {
+        "id": "khoa-hoc-xa-hoi",
+        "name": "Khoa học xã hội",
+        "positions": [
+          "Luật",
+          "Tâm lý học",
+          "Báo chí - Truyền thông",
+          "Công tác xã hội",
+          "Quan hệ quốc tế",
+          "Xã hội học",
+          "Đông phương học",
+          "Chính trị học"
+        ]
+      },
+      {
+        "id": "su-pham",
+        "name": "Sư phạm",
+        "positions": [
+          "Giáo dục mầm non",
+          "Giáo dục tiểu học",
+          "Sư phạm Toán",
+          "Sư phạm Ngữ văn",
+          "Sư phạm Tiếng Anh",
+          "Sư phạm Lịch sử",
+          "Sư phạm Địa lý",
+          "Giáo dục đặc biệt"
+        ]
+      },
+      {
+        "id": "ngoai-ngu",
+        "name": "Ngoại ngữ",
+        "positions": [
+          "Tiếng Anh",
+          "Tiếng Nhật",
+          "Tiếng Hàn",
+          "Tiếng Trung",
+          "Tiếng Pháp",
+          "Tiếng Đức",
+          "Tiếng Nga",
+          "Ngôn ngữ học"
+        ]
+      },
+      {
+        "id": "nghe-thuat",
+        "name": "Nghệ thuật",
+        "positions": [
+          "Thiết kế đồ họa",
+          "Thiết kế thời trang",
+          "Âm nhạc",
+          "Mỹ thuật",
+          "Điện ảnh",
+          "Nhiếp ảnh",
+          "Kiến trúc",
+          "Nghệ thuật số"
+        ]
+      },
+      {
+        "id": "nong-lam-ngu",
+        "name": "Nông - Lâm - Ngư",
+        "positions": [
+          "Nông nghiệp",
+          "Thú y",
+          "Lâm nghiệp",
+          "Thủy sản",
+          "Công nghệ thực phẩm",
+          "Công nghệ sinh học",
+          "Quản lý đất đai",
+          "Khoa học môi trường"
+        ]
+      },
+      {
+        "id": "du-lich-khach-san",
+        "name": "Du lịch - Khách sạn",
+        "positions": [
+          "Quản trị khách sạn",
+          "Hướng dẫn du lịch",
+          "Quản trị nhà hàng",
+          "Lữ hành",
+          "Ẩm thực",
+          "Tổ chức sự kiện",
+          "Quản lý resort & spa",
+          "Du lịch sinh thái"
+        ]
+      },
+      {
+        "id": "khoa-hoc-tu-nhien",
+        "name": "Khoa học tự nhiên",
+        "positions": [
+          "Toán học",
+          "Vật lý",
+          "Hóa học",
+          "Sinh học",
+          "Địa chất học",
+          "Khí tượng học",
+          "Hải dương học",
+          "Thiên văn học"
+        ]
+      },
+      {
+        "id": "truyen-thong-marketing",
+        "name": "Truyền thông - Marketing",
+        "positions": [
+          "Digital Marketing",
+          "PR - Quan hệ công chúng",
+          "Quảng cáo",
+          "Content Marketing",
+          "Social Media",
+          "Brand Management",
+          "Event Marketing",
+          "Marketing Analytics"
+        ]
+      },
+      {
+        "id": "tai-chinh-ngan-hang",
+        "name": "Tài chính - Ngân hàng",
+        "positions": [
+          "Ngân hàng",
+          "Chứng khoán",
+          "Bảo hiểm",
+          "Đầu tư",
+          "Phân tích tài chính",
+          "Quản lý quỹ",
+          "Tài chính doanh nghiệp",
+          "Fintech"
+        ]
+      },
+      {
+        "id": "thiet-ke",
+        "name": "Thiết kế",
+        "positions": [
+          "UI/UX Design",
+          "3D Design",
+          "Motion Design",
+          "Game Design",
+          "Industrial Design",
+          "Interior Design",
+          "Web Design",
+          "Brand Design"
+        ]
+      },
+      {
+        "id": "the-thao",
+        "name": "Thể thao",
+        "positions": [
+          "Huấn luyện viên",
+          "Giáo dục thể chất",
+          "Y học thể thao",
+          "Quản lý thể thao",
+          "Sport Science",
+          "Thể thao giải trí",
+          "Fitness & Gym",
+          "Điều trị vật lý"
+        ]
+      }
+    ]
+  }
+]

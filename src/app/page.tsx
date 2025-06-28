@@ -1,18 +1,22 @@
 import SchoolCard from "@/pages/home/SchoolCard";
 import SearchHeader from "@/pages/home/Search";
-import { getAllBlogs } from "./actions";
+import { getAllSchools } from "./actions";
 
 export default async function HomePage() {
-  let schools = [];
+  let schools: any[] = [];
   let error = null;
+
   try {
-    schools = await getAllBlogs();
+    schools = await getAllSchools();
   } catch (e) {
     error = e;
   }
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-24">
+    <div className="mx-auto max-w-6xl px-6">
+      <h1 className="text-3xl font-bold text-center mt-10 mb-4">
+        Khám phá các trường đại học nổi bật
+      </h1>
       <div className="py-10 px-4 flex flex-col gap-4">
         <SearchHeader />
         {error ? (

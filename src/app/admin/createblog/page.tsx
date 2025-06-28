@@ -238,7 +238,7 @@ const CreateBlog = () => {
 
                         {
                           "school_name": "Tên trường",
-                          "school_address": "Địa chỉ trường chỉ lấy tỉnh hoặc thành phố, ghi tắt ko cần thêm chữ thành phố",
+                          "school_address": "Địa chỉ trường chỉ lấy tỉnh hoặc thành phố, ghi tắt ko cần thêm chữ thành phố, ghi rõ ràng tên tỉnh và thành phố (ví dụ: Hồ Chí Minh, Hà Nội, Đà Nẵng, Hải Phòng, ...) ",
                           "school_year": "Năm thành lập",
                           "school_type": "Loại hình trường (công lập/tư thục/quốc tế)",
                           "school_describe": "1 hoặc 2 câu mô tả ngắn về trường",
@@ -267,7 +267,7 @@ const CreateBlog = () => {
                             Mức học phí cập nhật mới nhất (so sánh giữa các hệ nếu có)
                             Chính sách học bổng (theo điểm, theo hoàn cảnh, tài trợ doanh nghiệp...)
                             
-                            Phần này ko cần phân tích nhỏ ra chỉ cần viết chung thành text để kiểu markdown"
+                            Phần này ko cần phân tích nhỏ ra chỉ cần viết chung thành text để kiểu markdown, trình bày rõ ràng, chi tiết, đầy đủ, có các đầu mục"
                         
                         }
 
