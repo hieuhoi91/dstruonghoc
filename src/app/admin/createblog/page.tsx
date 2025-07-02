@@ -238,53 +238,57 @@ const CreateBlog = () => {
             role: "user",
             parts: [
               {
-                text: `"Hãy cung cấp thông tin chi tiết và cập nhật mới nhất về trường ${prompt} theo cấu trúc JSON sau:
+                text: `Hãy cung cấp thông tin chi tiết và cập nhật mới nhất về trường ${prompt} theo cấu trúc JSON sau:
+                      {
+                        "school_name": "Tên trường",
+                        "school_address": "Địa chỉ trường (chỉ ghi tỉnh/thành phố, không thêm chữ 'thành phố', ví dụ: Hồ Chí Minh, Hà Nội, Đà Nẵng, Hải Phòng, ...)",
+                        "school_year": "Năm thành lập",
+                        "school_type": "Loại hình trường (Công lập / Tư thục / Quốc tế)",
+                        "school_describe": "1-2 câu mô tả ngắn gọn về trường",
+                        "school_admission_criteria": "Chỉ tiêu tuyển sinh (khoảng cụ thể, ví dụ: 1000 - 1500), cần thông tin chính xác",
+                        "school_tuition": "Học phí (khoảng cụ thể, ví dụ: 10 triệu - 15 triệu/năm hoặc/kỳ), cần thông tin chính xác",
+                        "school_website": "Địa chỉ website chính thức của trường",
+                        "school_admission_point": "Khoảng điểm chuẩn các ngành năm 2024 hoặc 2025 (nếu có)",
+                        "school_short_name": "Mã trường",
+                        "school_dormitory": "Có ký túc xá không (Có/Không)",
+                        "school_major_popular": ["Ngành 1", "Ngành 2", "Ngành 3", ...],
+                        "details": "Giới thiệu chung:
+                      - Tên đầy đủ, tên viết tắt
+                      - Vị trí, các cơ sở
+                      - Năm thành lập
+                      - Loại hình trường (công lập/tư thục/quốc tế)
+                      - Sứ mệnh, định hướng đào tạo hoặc triết lý giáo dục
 
-                        {
-                          "school_name": "Tên trường",
-                          "school_address": "Địa chỉ trường chỉ lấy tỉnh hoặc thành phố, ghi tắt ko cần thêm chữ thành phố, ghi rõ ràng tên tỉnh và thành phố (ví dụ: Hồ Chí Minh, Hà Nội, Đà Nẵng, Hải Phòng, ...) ",
-                          "school_year": "Năm thành lập",
-                          "school_type": "Loại hình trường (công lập/tư thục/quốc tế)",
-                          "school_describe": "1 hoặc 2 câu mô tả ngắn về trường",
-                          "school_admission_criteria": "Chỉ tiêu tuyển sinh trong khoảng bao nhiêu (ví dụ: 1000 - 1500), cần phải lấy thông tin chính xác",
-                          "school_tuition": "Học phí trong khoảng bao nhiêu (ví dụ: 10 triệu - 15 triệu/năm hoặc kì), cần phải lấy thông tin chính xác",
-                          "school_website": "Địa chỉ website trường",
-                          "school_admission_point": "Điểm chuẩn trường trong khoảng ngành có điểm thấp nhất đến ngành có điểm cao nhất năm 2024 hoặc 2025(nếu có)",
-                          "school_short_name": "Mã trường",
-                          "school_dormitory": "Có kí túc xá hay không",
-                          "school_major_popular": ["Ngành 1", "Ngành 2", "Ngành 3", ...],
-                          "details": "Giới thiệu chung:
-                            Tên đầy đủ, tên viết tắt
-                            Vị trí, cơ sở
-                            Năm thành lập
-                            Loại hình trường (công lập/tư thục/quốc tế)
-                            Sứ mệnh, định hướng đào tạo hoặc triết lý giáo dục
-                            Tin tức tuyển sinh mới nhất:
-                            Tiêu chí tuyển sinh năm nay
-                            Chỉ tiêu dự kiến
-                            Phương thức xét tuyển (thi tuyển, học bạ, ưu tiên, v.v.)
-                            Các tổ hợp môn xét tuyển
-                            Điểm chuẩn tất cả các ngành của trường năm 2024 hoặc 2025(nếu có) tạo bằng bảng 
-                            Chương trình đào tạo:
-                            Các hệ đào tạo: đại trà, chất lượng cao, liên kết quốc tế, văn bằng 2, liên thông
-                            Các chương trình trao đổi sinh viên (nếu có)
-                            Ngành học và lĩnh vực đào tạo:
-                            Các ngành đào tạo chính
-                            Ngành học thế mạnh, đặc trưng hoặc "hot" hiện nay
-                            Các lĩnh vực có liên kết quốc tế, cơ hội nghề nghiệp cao
-                            Học phí & học bổng:
-                            Mức học phí cập nhật mới nhất (so sánh giữa các hệ nếu có)
-                            Chính sách học bổng (theo điểm, theo hoàn cảnh, tài trợ doanh nghiệp...)
-                            
-                            Phần này ko cần phân tích nhỏ ra chỉ cần viết chung thành text để kiểu markdown, trình bày rõ ràng, chi tiết, đầy đủ, có các đầu mục"
-                        
-                        }
+                      Tin tức tuyển sinh mới nhất:
+                      - Tiêu chí tuyển sinh năm nay
+                      - Chỉ tiêu dự kiến
+                      - Phương thức xét tuyển (thi tuyển, học bạ, ưu tiên, v.v.)
+                      - Các tổ hợp môn xét tuyển
+                      - Điểm chuẩn tất cả các ngành của trường năm 2024 hoặc 2025 (trình bày dạng bảng)
 
-                        
-                          👉 Nếu có thông tin mới nhất 2025 từ website trường hoặc báo chí, hãy ưu tiên cập nhật nội dụng mới nhất vào nội dung trên.
-                            Chỉ cần cho tôi kết quả        
-                            Khi viết bài này hãy tối ưu seo cho bài viết chẳng hạn như dùng từ khóa quan trọng phổ biến,  Tối ưu snippet hiển thị trên Google, thêm internal link và external link uy tín.Đảm bảo có đoạn mở đầu tóm tắt (sẽ chuyển thành <meta description> nếu build Next.js blog SEO-friendly). chỉ trong phần details, chỉ gen 1 kiểu json để tôi có thể lấy thông tin ra được
-                        "`,
+                      Chương trình đào tạo:
+                      - Các hệ đào tạo: đại trà, chất lượng cao, liên kết quốc tế, văn bằng 2, liên thông
+                      - Chương trình trao đổi sinh viên (nếu có)
+
+                      Ngành học và lĩnh vực đào tạo:
+                      - Các ngành đào tạo chính
+                      - Ngành thế mạnh, đặc trưng hoặc “hot”
+                      - Các lĩnh vực có liên kết quốc tế, cơ hội nghề nghiệp cao
+
+                      Học phí & học bổng:
+                      - Mức học phí cập nhật mới nhất (nếu có thể so sánh giữa các hệ thì càng tốt)
+                      - Chính sách học bổng (theo điểm, theo hoàn cảnh, tài trợ doanh nghiệp, v.v.)
+
+                      👉 Lưu ý:
+                      - Nếu có thông tin mới nhất năm 2025 từ website chính thức của trường hoặc báo chí uy tín, hãy ưu tiên cập nhật.
+                      - Chỉ cần trả về JSON, không kèm giải thích hay mô tả ngoài.
+                      - Trong phần “details”, trình bày nội dung chi tiết như bài viết markdown SEO-friendly:
+                        - Có đoạn mở đầu tóm tắt (để dùng làm <meta description>)
+                        - Tối ưu từ khóa phổ biến (SEO)
+                        - Tối ưu snippet hiển thị trên Google
+                        - Thêm internal link nếu có thể (ví dụ link đến các trang ngành học trên chính website trường)
+                        - Thêm external link uy tín (ví dụ: link tới bài báo tuyển sinh, dữ liệu từ Bộ GD&ĐT, v.v.)
+                      "`,
               },
             ],
           },
