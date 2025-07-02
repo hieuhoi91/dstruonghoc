@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import Head from "next/head";
 import Image from "next/image";
 import { fetchAllSlugsFromDB, getBlogBySlug } from "./actions";
+import NotFoundError from "./components/NotFoundError";
 import TiptapClientWrapper from "./components/TiptapClientWrapper";
 
 export async function generateStaticParams() {
@@ -21,7 +22,7 @@ export default async function DetailSchoolPage({
   const data = await getBlogBySlug(slug);
 
   if (!data) {
-    return <div>404 - Không tìm thấy bài viết</div>;
+    return <NotFoundError />;
   }
 
   // SEO structured data
@@ -94,6 +95,10 @@ export default async function DetailSchoolPage({
               <div className="text-gray-500">{data.school_year}</div>
             </div>
             <div>
+              <div className="font-medium">Kí túc xá</div>
+              <div className="text-gray-500">{data.school_dormitory}</div>
+            </div>
+            <div>
               <div className="font-medium">Chỉ tiêu tuyển sinh</div>
               <div className="text-gray-500">
                 {data.school_admission_criteria}
@@ -102,6 +107,25 @@ export default async function DetailSchoolPage({
             <div>
               <div className="font-medium">Học phí</div>
               <div className="text-gray-500">{data.school_tuition}</div>
+            </div>
+
+            <div>
+              <div className="font-medium">Điểm chuẩn</div>
+              <div className="text-gray-500">{data.school_admission_point}</div>
+            </div>
+
+            <div>
+              <div className="font-medium">Website</div>
+              <div className="text-gray-500">
+                <a
+                  href={data.school_website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-600 transition-all"
+                >
+                  {data.school_website}
+                </a>
+              </div>
             </div>
           </div>
         </div>

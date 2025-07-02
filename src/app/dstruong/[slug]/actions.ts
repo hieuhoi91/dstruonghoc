@@ -1,6 +1,6 @@
 'use server';
 
-import { supabase } from '@/lib/supabase';
+import { createClient } from '@/lib/supabase/server';
 
 interface School {
   id: number;
@@ -14,12 +14,17 @@ interface School {
   school_tuition: string;
   logo: string;
   details: string;
+  school_admission_point: string;
+  school_website: string;
+  school_dormitory: string;
+  school_short_name: string;
   created_at?: string;
   updated_at?: string;
 }
 
 export async function getBlogBySlug(slug: string): Promise<School | null> {
-  try {
+    try {
+    const supabase = createClient();
     const { data, error } = await supabase
       .from('truong-dai-hoc')
       .select('*')
@@ -38,20 +43,20 @@ export async function getBlogBySlug(slug: string): Promise<School | null> {
   }
 }
 
-export async function fetchAllSlugsFromDB(): Promise<{ slug: string }[]> {
+export async function fetchAllSlugsFromDB() {
   try {
+    const supabase = createClient();
     const { data, error } = await supabase
       .from('truong-dai-hoc')
       .select('slug');
-    
+
     if (error) {
-      console.error('Error fetching slugs:', error.message);
-      return [];
+      throw error;
     }
-    
+
     return data || [];
   } catch (error) {
-    console.error('Unexpected error in fetchAllSlugsFromDB:', error);
+    console.error('Error fetching slugs:', error);
     return [];
   }
 }

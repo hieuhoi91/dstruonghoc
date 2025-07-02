@@ -192,6 +192,10 @@ const CreateBlog = () => {
   const [editingMajorValue, setEditingMajorValue] = useState("");
   const [newMajor, setNewMajor] = useState("");
   const [schoolLogo, setSchoolLogo] = useState("");
+  const [schoolWebsite, setSchoolWebsite] = useState("");
+  const [schoolAdmissionPoint, setSchoolAdmissionPoint] = useState("");
+  const [schoolShortName, setSchoolShortName] = useState("");
+  const [schoolDormitory, setSchoolDormitory] = useState("");
 
   // Tạo slug từ schoolName
   const generateSlug = (name: string): string => {
@@ -244,6 +248,10 @@ const CreateBlog = () => {
                           "school_describe": "1 hoặc 2 câu mô tả ngắn về trường",
                           "school_admission_criteria": "Chỉ tiêu tuyển sinh trong khoảng bao nhiêu (ví dụ: 1000 - 1500), cần phải lấy thông tin chính xác",
                           "school_tuition": "Học phí trong khoảng bao nhiêu (ví dụ: 10 triệu - 15 triệu/năm hoặc kì), cần phải lấy thông tin chính xác",
+                          "school_website": "Địa chỉ website trường",
+                          "school_admission_point": "Điểm chuẩn trường trong khoảng ngành có điểm thấp nhất đến ngành có điểm cao nhất năm 2024 hoặc 2025(nếu có)",
+                          "school_short_name": "Tên viết tắt trường",
+                          "school_dormitory": "Có kí túc xá hay không",
                           "school_major_popular": ["Ngành 1", "Ngành 2", "Ngành 3", ...],
                           "details": "Giới thiệu chung:
                             Tên đầy đủ, tên viết tắt
@@ -256,6 +264,7 @@ const CreateBlog = () => {
                             Chỉ tiêu dự kiến
                             Phương thức xét tuyển (thi tuyển, học bạ, ưu tiên, v.v.)
                             Các tổ hợp môn xét tuyển
+                            Điểm chuẩn tất cả các ngành của trường năm 2024 hoặc 2025(nếu có) tạo bằng bảng 
                             Chương trình đào tạo:
                             Các hệ đào tạo: đại trà, chất lượng cao, liên kết quốc tế, văn bằng 2, liên thông
                             Các chương trình trao đổi sinh viên (nếu có)
@@ -273,7 +282,8 @@ const CreateBlog = () => {
 
                         
                           👉 Nếu có thông tin mới nhất 2025 từ website trường hoặc báo chí, hãy ưu tiên cập nhật nội dụng mới nhất vào nội dung trên.
-                            Chỉ cần cho tôi kết quả                        
+                            Chỉ cần cho tôi kết quả        
+                            Khi viết bài này hãy tối ưu seo cho bài viết chẳng hạn như dùng từ khóa quan trọng phổ biến,  Tối ưu snippet hiển thị trên Google, thêm internal link và external link uy tín.Đảm bảo có đoạn mở đầu tóm tắt (sẽ chuyển thành <meta description> nếu build Next.js blog SEO-friendly). chỉ trong phần details
                         "`,
               },
             ],
@@ -310,6 +320,10 @@ const CreateBlog = () => {
         setSchoolDescribe(parsed.school_describe || "");
         setSchoolAdmissionCriteria(parsed.school_admission_criteria || "");
         setSchoolTuition(parsed.school_tuition || "");
+        setSchoolWebsite(parsed.school_website || "");
+        setSchoolAdmissionPoint(parsed.school_admission_point || "");
+        setSchoolShortName(parsed.school_short_name || "");
+        setSchoolDormitory(parsed.school_dormitory || "");
         // Nếu là array thì set luôn, nếu là string thì tách theo dấu phẩy
         if (Array.isArray(parsed.school_major_popular)) {
           setSchoolMajorPopular(
@@ -363,6 +377,10 @@ const CreateBlog = () => {
         school_major_popular: schoolMajorPopular,
         school_admission_criteria: schoolAdmissionCriteria,
         school_tuition: schoolTuition,
+        school_website: schoolWebsite,
+        school_admission_point: schoolAdmissionPoint,
+        school_short_name: schoolShortName,
+        school_dormitory: schoolDormitory,
         details: markdown,
       });
       setShowSuccessMessage(true);
@@ -420,15 +438,14 @@ const CreateBlog = () => {
             disabled={saving}
           />
         </div>
-
         <div>
-          <label className="block mb-2 font-semibold">Địa chỉ:</label>
+          <label className="block mb-2 font-semibold">Tên viết tắt:</label>
           <input
             type="text"
-            value={schoolAddress}
-            onChange={(e) => setSchoolAddress(e.target.value)}
+            value={schoolShortName}
+            onChange={(e) => setSchoolShortName(e.target.value)}
             className="w-full border rounded px-3 py-2 mb-4"
-            placeholder="Địa chỉ trường"
+            placeholder="Ví dụ: HCMUS, HUST, ..."
             disabled={saving}
           />
         </div>
@@ -451,6 +468,29 @@ const CreateBlog = () => {
             onChange={(e) => setSchoolType(e.target.value)}
             className="w-full border rounded px-3 py-2 mb-4"
             placeholder="Loại hình trường"
+            disabled={saving}
+          />
+        </div>
+
+        <div>
+          <label className="block mb-2 font-semibold">Địa chỉ:</label>
+          <input
+            type="text"
+            value={schoolAddress}
+            onChange={(e) => setSchoolAddress(e.target.value)}
+            className="w-full border rounded px-3 py-2 mb-4"
+            placeholder="Địa chỉ trường"
+            disabled={saving}
+          />
+        </div>
+        <div>
+          <label className="block mb-2 font-semibold">Điểm chuẩn:</label>
+          <input
+            type="text"
+            value={schoolAdmissionPoint}
+            onChange={(e) => setSchoolAdmissionPoint(e.target.value)}
+            className="w-full border rounded px-3 py-2 mb-4"
+            placeholder="10 - 15"
             disabled={saving}
           />
         </div>
@@ -478,6 +518,30 @@ const CreateBlog = () => {
             disabled={saving}
           />
         </div>
+        <div>
+          <label className="block mb-2 font-semibold">Website trường:</label>
+          <input
+            type="url"
+            value={schoolWebsite}
+            onChange={(e) => setSchoolWebsite(e.target.value)}
+            className="w-full border rounded px-3 py-2 mb-4"
+            placeholder="https://example.edu.vn"
+            disabled={saving}
+          />
+        </div>
+        <div>
+          <label className="block mb-2 font-semibold">Ký túc xá:</label>
+          <select
+            value={schoolDormitory}
+            onChange={(e) => setSchoolDormitory(e.target.value)}
+            className="w-full border rounded px-3 py-2 mb-4"
+            disabled={saving}
+          >
+            <option value="">-- Chọn --</option>
+            <option value="Có">Có</option>
+            <option value="Không">Không</option>
+          </select>
+        </div>
         <div className="md:col-span-2">
           <label className="block mb-2 font-semibold">Mô tả ngắn:</label>
           <textarea
@@ -493,10 +557,9 @@ const CreateBlog = () => {
           <label className="block mb-2 font-semibold">Các ngành chính:</label>
           <div className="flex flex-wrap gap-2 mb-2">
             {schoolMajorPopular.map((major, idx) => (
-              <>
+              <div key={`major-${idx}`}>
                 {editingMajorIndex === idx ? (
                   <input
-                    key={"edit-" + idx}
                     type="text"
                     value={editingMajorValue}
                     onChange={(e) => setEditingMajorValue(e.target.value)}
@@ -519,7 +582,6 @@ const CreateBlog = () => {
                   />
                 ) : (
                   <Badge
-                    key={major + idx}
                     className="cursor-pointer rounded-xl group px-4 py-2 text-sm bg"
                     onClick={() => {
                       setEditingMajorIndex(idx);
@@ -541,7 +603,7 @@ const CreateBlog = () => {
                     </button>
                   </Badge>
                 )}
-              </>
+              </div>
             ))}
           </div>
           <div className="flex gap-2">

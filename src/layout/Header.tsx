@@ -1,6 +1,5 @@
 import Logo from "@/components/logo";
 import { ThemeSwitcher } from "@/components/theme";
-import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -40,9 +39,6 @@ const Header: React.FC = () => {
         </div>
         <div className="flex items-center gap-2 col-span-1 justify-center">
           <ThemeSwitcher />
-          <Button asChild variant="outline" size="sm">
-            <a href="/login">Đăng nhập</a>
-          </Button>
         </div>
       </div>
     </header>

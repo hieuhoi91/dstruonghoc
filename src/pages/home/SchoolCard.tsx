@@ -63,7 +63,7 @@ const SchoolCard = ({ school }: { school: School }) => {
       <CardContent className="px-6 mb-4">
         <p className="text-sm text-gray-500 line-clamp-3">{school.describe}</p>
       </CardContent>
-      <CardFooter className="px-6">
+      <CardFooter className="px-6 flex-1 flex items-end">
         <Link
           className="w-full cursor-pointer"
           href={`/dstruong/${school.slug}`}
