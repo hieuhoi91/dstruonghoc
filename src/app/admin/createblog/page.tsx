@@ -250,7 +250,7 @@ const CreateBlog = () => {
                           "school_tuition": "Học phí trong khoảng bao nhiêu (ví dụ: 10 triệu - 15 triệu/năm hoặc kì), cần phải lấy thông tin chính xác",
                           "school_website": "Địa chỉ website trường",
                           "school_admission_point": "Điểm chuẩn trường trong khoảng ngành có điểm thấp nhất đến ngành có điểm cao nhất năm 2024 hoặc 2025(nếu có)",
-                          "school_short_name": "Tên viết tắt trường",
+                          "school_short_name": "Mã trường",
                           "school_dormitory": "Có kí túc xá hay không",
                           "school_major_popular": ["Ngành 1", "Ngành 2", "Ngành 3", ...],
                           "details": "Giới thiệu chung:
@@ -283,7 +283,7 @@ const CreateBlog = () => {
                         
                           👉 Nếu có thông tin mới nhất 2025 từ website trường hoặc báo chí, hãy ưu tiên cập nhật nội dụng mới nhất vào nội dung trên.
                             Chỉ cần cho tôi kết quả        
-                            Khi viết bài này hãy tối ưu seo cho bài viết chẳng hạn như dùng từ khóa quan trọng phổ biến,  Tối ưu snippet hiển thị trên Google, thêm internal link và external link uy tín.Đảm bảo có đoạn mở đầu tóm tắt (sẽ chuyển thành <meta description> nếu build Next.js blog SEO-friendly). chỉ trong phần details
+                            Khi viết bài này hãy tối ưu seo cho bài viết chẳng hạn như dùng từ khóa quan trọng phổ biến,  Tối ưu snippet hiển thị trên Google, thêm internal link và external link uy tín.Đảm bảo có đoạn mở đầu tóm tắt (sẽ chuyển thành <meta description> nếu build Next.js blog SEO-friendly). chỉ trong phần details, chỉ gen 1 kiểu json để tôi có thể lấy thông tin ra được
                         "`,
               },
             ],
