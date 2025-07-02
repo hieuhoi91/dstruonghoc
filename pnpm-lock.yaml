@@ -178,8 +178,8 @@ importers:
         specifier: ^15.4.3
         version: 15.4.3
       serwist:
-        specifier: ^9.0.12
-        version: 9.0.12(typescript@5.7.3)
+        specifier: ^9.0.15
+        version: 9.0.15(typescript@5.7.3)
       tailwindcss:
         specifier: ^4.1.7
         version: 4.1.7
@@ -1855,6 +1855,9 @@ packages:
   idb@8.0.2:
     resolution: {integrity: sha512-CX70rYhx7GDDQzwwQMDwF6kDRQi5vVs6khHUumDrMecBylKkwvZ8HWvKV08AGb7VbpoGCWUQ4aHzNDgoUiOIUg==}
 
+  idb@8.0.3:
+    resolution: {integrity: sha512-LtwtVyVYO5BqRvcsKuB2iUMnHwPVByPCXFXOpuU96IZPPoPN6xjOGxZQ74pgSVVLQWtUOYgyeL4GE98BY5D3wg==}
+
   ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
 
@@ -2538,16 +2541,16 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  serwist@9.0.12:
-    resolution: {integrity: sha512-u5UIJfG/RwkHtffLzlHAaBjXTHQFkKIGvdLQu/zpCWG3cN/AdMbvmtT7Kx2360wQqfE6infDORMdNTtNXpIpjQ==}
+  serwist@9.0.13:
+    resolution: {integrity: sha512-BF3bmzYdOVT2lF3iHV0044NqTO6q6GAiqrYpc7L9EPYQXZHOy22WajKaHLvCdvpm2Jpji4SsxUL8/uC1WSCZ5g==}
     peerDependencies:
       typescript: '>=5.0.0'
     peerDependenciesMeta:
       typescript:
         optional: true
 
-  serwist@9.0.13:
-    resolution: {integrity: sha512-BF3bmzYdOVT2lF3iHV0044NqTO6q6GAiqrYpc7L9EPYQXZHOy22WajKaHLvCdvpm2Jpji4SsxUL8/uC1WSCZ5g==}
+  serwist@9.0.15:
+    resolution: {integrity: sha512-DyYLL73o3wOp0KwgSxCV6lk5KAgt7By5IHRoD6O5hJIrCQ09QwjOI8Fny7g2ZQjskcC8nRZZNVMP5GxcCREExw==}
     peerDependencies:
       typescript: '>=5.0.0'
     peerDependenciesMeta:
@@ -4522,6 +4525,8 @@ snapshots:
 
   idb@8.0.2: {}
 
+  idb@8.0.3: {}
+
   ieee754@1.2.1: {}
 
   import-fresh@3.3.1:
@@ -5171,15 +5176,15 @@ snapshots:
   semver@7.7.2:
     optional: true
 
-  serwist@9.0.12(typescript@5.7.3):
+  serwist@9.0.13(typescript@5.7.3):
     dependencies:
       idb: 8.0.2
     optionalDependencies:
       typescript: 5.7.3
 
-  serwist@9.0.13(typescript@5.7.3):
+  serwist@9.0.15(typescript@5.7.3):
     dependencies:
-      idb: 8.0.2
+      idb: 8.0.3
     optionalDependencies:
       typescript: 5.7.3
 
