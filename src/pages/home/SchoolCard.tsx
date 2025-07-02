@@ -41,7 +41,7 @@ const SchoolCard = ({ school }: { school: School }) => {
           <img
             src={school.logo}
             alt={school.name}
-            className="w-20 h-20 object-contain rounded-xl"
+            className="w-20 h-20 object-contain "
           />
         </div>
         <div className="font-bold text-xl text-center line-clamp-2 my-2">

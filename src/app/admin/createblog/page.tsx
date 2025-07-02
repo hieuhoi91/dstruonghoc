@@ -249,7 +249,7 @@ const CreateBlog = () => {
                         "school_tuition": "Học phí (khoảng cụ thể, ví dụ: 10 triệu - 15 triệu/năm hoặc/kỳ), cần thông tin chính xác",
                         "school_website": "Địa chỉ website chính thức của trường",
                         "school_admission_point": "Khoảng điểm chuẩn các ngành năm 2024 hoặc 2025 (nếu có)",
-                        "school_short_name": "Mã trường",
+                        "school_short_name": "Mã trường đại học (ví dụ: HCMUS, HUST, ...)",
                         "school_dormitory": "Có ký túc xá không (Có/Không)",
                         "school_major_popular": ["Ngành 1", "Ngành 2", "Ngành 3", ...],
                         "details": "Giới thiệu chung:
@@ -443,7 +443,7 @@ const CreateBlog = () => {
           />
         </div>
         <div>
-          <label className="block mb-2 font-semibold">Tên viết tắt:</label>
+          <label className="block mb-2 font-semibold">Mã trường:</label>
           <input
             type="text"
             value={schoolShortName}

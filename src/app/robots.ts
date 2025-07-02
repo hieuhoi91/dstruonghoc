@@ -6,9 +6,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: [],
+        disallow: ["/admin", "/admin/*"],
       },
     ],
-    sitemap: "https://nijimap.com/sitemap.xml",
+    sitemap: "https://bespoke-gaufre-39a662.netlify.app/sitemap.xml",
   };
 }
